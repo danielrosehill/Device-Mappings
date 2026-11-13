@@ -1,0 +1,84 @@
+{
+  "schema": "device-mappings-index/1",
+  "updated": "2026-11-13",
+  "devices": [
+    {
+      "name": "Logitech F310 (XInput mode)",
+      "type": "gamepad",
+      "usb": "046d:c21d",
+      "driver": "xpad",
+      "formats": [
+        "device.json",
+        "sdl",
+        "w3c-gamepad"
+      ],
+      "press_verified": true,
+      "repo": "danielrosehill/Logitech-F310-Gamepad-Linux-Profile",
+      "profile": "device.json"
+    },
+    {
+      "name": "Jabra Evolve 30 II (USB headset)",
+      "type": "headset-buttons",
+      "usb": "0b0e:0314",
+      "driver": "usbhid (hidraw)",
+      "formats": [
+        "hwdb",
+        "hidraw-protocol",
+        "uinput-listener"
+      ],
+      "press_verified": true,
+      "repo": "danielrosehill/Jabra-Headset-Button-Hook",
+      "profile": "docs/hid-protocol.md"
+    },
+    {
+      "name": "Olympus RS-27H foot switch",
+      "type": "foot-pedal",
+      "usb": "07b4:0218",
+      "driver": "usbhid",
+      "formats": [
+        "lsusb",
+        "evtest-descriptor"
+      ],
+      "press_verified": false,
+      "repo": "danielrosehill/Olympus-RS27H-Foot-Switch",
+      "profile": "docs/hardware.md"
+    },
+    {
+      "name": "Generic USB HID button",
+      "type": "single-button",
+      "usb": "5131:2019",
+      "driver": "hid-generic",
+      "formats": [
+        "keyd"
+      ],
+      "press_verified": true,
+      "repo": "danielrosehill/USB-Button-Remap",
+      "profile": "README.md"
+    },
+    {
+      "name": "K811 wired gaming keypad",
+      "type": "macro-keypad",
+      "usb": "5566:000a",
+      "driver": "hid-generic",
+      "formats": [
+        "evtest"
+      ],
+      "press_verified": true,
+      "repo": "danielrosehill/K811-EV-Test-Events",
+      "profile": "README.md"
+    },
+    {
+      "name": "USB HID foot mouse",
+      "type": "foot-pedal",
+      "usb": "3553:b001",
+      "driver": "hid-generic",
+      "formats": [
+        "hwdb",
+        "evtest"
+      ],
+      "press_verified": true,
+      "repo": "danielrosehill/USB-Foot-Mouse-Linux",
+      "profile": "README.md"
+    }
+  ]
+}

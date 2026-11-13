@@ -9,9 +9,14 @@ is the index.
 | Device | Type | USB ID | Driver / route | Mapping format | Repo |
 |---|---|---|---|---|---|
 | Logitech F310 (XInput mode) | Gamepad | `046d:c21d` | `xpad` | evdev + browser Gamepad API indexes + SDL line, all buttons press-verified | [Logitech-F310-Gamepad-Linux-Profile](https://github.com/danielrosehill/Logitech-F310-Gamepad-Linux-Profile) |
+| Jabra Evolve 30 II | Headset call buttons | `0b0e:0314` | `usbhid`, hidraw listener → uinput | decoded hidraw protocol, hwdb (volume keys off), centre button → F13 | [Jabra-Headset-Button-Hook](https://github.com/danielrosehill/Jabra-Headset-Button-Hook) |
+| Olympus RS-27H | Foot switch | `07b4:0218` | `usbhid` | identity + descriptor; per-pedal codes **not yet captured** | [Olympus-RS27H-Foot-Switch](https://github.com/danielrosehill/Olympus-RS27H-Foot-Switch) |
 | Generic USB HID button | Single button | `5131:2019` | `hid-generic`, remapped with `keyd` | keyd config (button → F13) | [USB-Button-Remap](https://github.com/danielrosehill/USB-Button-Remap) |
 | K811 wired gaming keypad | Macro keypad | `5566:000a` | `hid-generic` | `evtest` event captures | [K811-EV-Test-Events](https://github.com/danielrosehill/K811-EV-Test-Events) |
 | USB HID foot mouse | Foot pedal / mouse | `3553:b001` | `hid-generic`, udev hwdb | hwdb remap + `evtest` notes | [USB-Foot-Mouse-Linux](https://github.com/danielrosehill/USB-Foot-Mouse-Linux) |
+
+Machine-readable copy: [`devices.json`](devices.json) (`schema: device-mappings-index/1`). Agents look devices up by
+`usb` (vendor:product) there, then read `profile` in the linked repo.
 
 ## Is there a standard format?
 
@@ -38,4 +43,5 @@ Each device repo here should carry:
 
 Plugin [`input-device-mapper`](https://github.com/danielrosehill/Input-Device-Mapper-Plugin) (Claude Code):
 `idmap.py list`, `idmap.py info <vvvv:pppp>`, then `idmap.py press <device> --label <button>` once per button.
-Add the new repo to the table above.
+Add the new repo to the table above **and** to `devices.json`. To look a connected device up in this library, use the
+same plugin's `lookup-device-mapping` skill.
