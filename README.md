@@ -9,6 +9,7 @@ is the index.
 | Device | Type | USB ID | Driver / route | Mapping format | Repo |
 |---|---|---|---|---|---|
 | Logitech F310 (XInput mode) | Gamepad | `046d:c21d` | `xpad` | evdev + browser Gamepad API indexes + SDL line, all buttons press-verified | [Logitech-F310-Gamepad-Linux-Profile](https://github.com/danielrosehill/Logitech-F310-Gamepad-Linux-Profile) |
+| 8BitDo Micro (D mode, Bluetooth) | Gamepad | `2dc8:9020` | `hid-generic` | evdev + joydev indexes + SDL line (untested); home and star not pressed | [8BitDo-Micro-Gamepad-Linux-Profile](https://github.com/danielrosehill/8BitDo-Micro-Gamepad-Linux-Profile) |
 | Jabra Evolve 30 II | Headset call buttons | `0b0e:0314` | `usbhid`, hidraw listener → uinput | decoded hidraw protocol, hwdb (volume keys off), centre button → F13 | [Jabra-Headset-Button-Hook](https://github.com/danielrosehill/Jabra-Headset-Button-Hook) |
 | Olympus RS-27H | Foot switch | `07b4:0218` | `usbhid` | identity + descriptor; per-pedal codes **not yet captured** | [Olympus-RS27H-Foot-Switch](https://github.com/danielrosehill/Olympus-RS27H-Foot-Switch) |
 | Generic USB HID button | Single button | `5131:2019` | `hid-generic`, remapped with `keyd` | keyd config (button → F13) | [USB-Button-Remap](https://github.com/danielrosehill/USB-Button-Remap) |

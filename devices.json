@@ -1,6 +1,6 @@
 {
   "schema": "device-mappings-index/1",
-  "updated": "2026-11-13",
+  "updated": "2026-11-24",
   "devices": [
     {
       "name": "Logitech F310 (XInput mode)",
@@ -14,6 +14,19 @@
       ],
       "press_verified": true,
       "repo": "danielrosehill/Logitech-F310-Gamepad-Linux-Profile",
+      "profile": "device.json"
+    },
+    {
+      "name": "8BitDo Micro (D mode, Bluetooth)",
+      "type": "gamepad",
+      "usb": "2dc8:9020",
+      "driver": "hid-generic",
+      "formats": [
+        "device.json",
+        "sdl"
+      ],
+      "press_verified": true,
+      "repo": "danielrosehill/8BitDo-Micro-Gamepad-Linux-Profile",
       "profile": "device.json"
     },
     {
